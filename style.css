@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #dbdbdd;
+}
+section .rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: #f5f5f5;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .brand {
+  position: relative;
+  max-width: 100%;
+}
+header .navbar {
+  position: relative;
+  display: flex;
+}
+header .navbar li {
+  padding: 0;
+  list-style: none;
+  margin-right: 110px;
+}
+header .navbar li a {
+  display: inline-block;
+  color: #6d6d6f;
+  font-weight: 500;
+  text-decoration: none;
+}
+header .navbar li a:hover {
+  color: #202020;
+}
+section .yellow-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  border-radius: 0 0 0 20px;
+  background: #eabd30;
+}
+.content {
+  position: relative;
+  left: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .text-area {
+  position: relative;
+  max-width: 600px;
+  margin-right: 20px;
+}
+.content .text-area h2 {
+  color: #424240;
+  font-size: 100px;
+  margin-bottom: 10px;
+  line-height: 1.4em;
+  font-weight: 700;
+}
+.content .text-area h4 {
+  color: #424240;
+  max-width: 400px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  line-height: 1.4em;
+}
+.content .text-area p {
+  color: #424240;
+  margin-bottom: 10px;
+}
+.button {
+  background-color: #eabd30;
+  color: #424240;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 0px;
+  width: 150px;
+  height: 40px;
+  box-shadow: 3px 3px 6px #999;
+  transition: 0.7s;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 17px;
+  padding: 10px;
+}
+button:hover {
+  color: #fff;
+  background-color: #424240;
+}
+.social-icons {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+}
+.social-icons li {
+  list-style: none;
+}
+
+.social-icons li a {
+  display: inline-block;
+  background-color: #dbdbdd;
+  width: 40px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+}
+.social-icons li a:hover {
+  transform: translateX(-10px);
+}
+
+/************** CAROUSEL **************/
+.swiper-container {
+  width: 500px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+}
+/****************************/
+.carousel {
+  position: absolute;
+  left: 50px;
+  background: rgb(231, 183, 39);
+  background: linear-gradient(
+    0deg,
+    rgba(231, 183, 39, 1) 0%,
+    rgba(252, 231, 140, 1) 100%
+  );
+  border-radius: 50%;
+}
+.content .carousel {
+  width: 500px;
+  display: flex;
+  justify-content: flex-end;
+}
+.content .carousel img {
+  max-width: 150px;
+}
+.swiper-slide img {
+  position: absolute;
+  bottom: 0;
+  max-height: 100%;
+}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+
+@media (max-width: 991px) {
+  header {
+    padding: 40px;
+  }
+  .social-icons {
+    right: 40px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .content .text-area,
+  .content .carousel {
+    max-width: 100%;
+  }
+  .swiper-slide {
+    height: 300px;
+  }
+  header .navbar {
+    display: none;
+  }
+  header .navbar.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #eabd30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+  header .navbar li a {
+    margin: 10px 0;
+    font-size: 1.5em;
+    font-weight: 300;
+  }
+  .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: url(images/menu.png);
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 10000;
+  }
+  .toggle.active {
+    position: fixed;
+    right: 40px;
+    background: url(images/close.png);
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
