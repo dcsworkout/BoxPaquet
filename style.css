@@ -1,34 +1,50 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
+html {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
-section {
+body {
+  margin: 0;
+  height: 100vh;
+  background: #dbdbdd;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+}
+/*
+LAYOUT
+*/
+.main-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  padding: 100px;
+  max-width: 10000px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #dbdbdd;
 }
-section .rectangle {
+.main-container .left-rectangle {
   position: absolute;
   top: 0;
   left: 0;
-  width: 25%;
+  width: 22.5%;
   height: 100%;
+  margin: auto;
   background: #f5f5f5;
 }
-header {
+.main-container .top-rectangle {
   position: absolute;
   top: 0;
+  right: 0;
+  width: 12.5%;
+  height: 13.5%;
+  margin: auto;
+  background: #eabd30;
+  border-radius: 0 0 0 20px;
+}
+/*
+HEADER
+*/
+header {
+  position: absolute;
+  top: 2rem;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,64 +52,76 @@ header {
 header .brand {
   position: relative;
   max-width: 100%;
+  margin-left: 12.5%;
 }
 header .navbar {
   position: relative;
   display: flex;
+  margin-right: 20%;
 }
 header .navbar li {
   padding: 0;
   list-style: none;
-  margin-right: 110px;
+  margin-right: 80px;
+  display: table-cell;
+  position: relative;
 }
 header .navbar li a {
   display: inline-block;
   color: #6d6d6f;
-  font-weight: 500;
   text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 10px;
 }
 header .navbar li a:hover {
   color: #202020;
 }
-section .yellow-top {
+header .navbar li a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2.5px;
+  left: 50%;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 15%;
-  height: 15%;
-  border-radius: 0 0 0 20px;
   background: #eabd30;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
 }
+header .navbar li a:hover:after {
+  width: 100%;
+  left: 0;
+}
+/*
+MEDIA
+*/
 .content {
   position: relative;
-  left: 50%;
+  margin: auto;
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  align-content: center;
 }
 .content .text-area {
-  position: relative;
-  max-width: 600px;
-  margin-right: 20px;
+  width: 40%;
+  margin: auto;
 }
 .content .text-area h2 {
   color: #424240;
-  font-size: 100px;
-  margin-bottom: 10px;
+  font-size: 5rem;
   line-height: 1.4em;
-  font-weight: 700;
 }
 .content .text-area h4 {
   color: #424240;
-  max-width: 400px;
   font-size: 2rem;
-  margin-bottom: 20px;
   line-height: 1.4em;
 }
 .content .text-area p {
   color: #424240;
-  margin-bottom: 10px;
 }
 .button {
   background-color: #eabd30;
@@ -114,33 +142,10 @@ button:hover {
   color: #fff;
   background-color: #424240;
 }
-.social-icons {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;
-}
-.social-icons li {
-  list-style: none;
-}
 
-.social-icons li a {
-  display: inline-block;
-  background-color: #dbdbdd;
-  width: 40px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  transition: 0.2s ease-in-out;
-}
-.social-icons li a:hover {
-  transform: translateX(-10px);
-}
-
-/************** CAROUSEL **************/
+/*CAROUSEL*/
 .swiper-container {
-  width: 500px;
+  width: 100%;
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -152,11 +157,12 @@ button:hover {
   display: flex;
   justify-content: center;
 }
-/****************************/
-.carousel {
-  position: absolute;
-  left: 50px;
-  background: rgb(231, 183, 39);
+.content .carousel {
+  width: 60%;
+  margin: auto;
+  max-width: 500px;
+  display: flex;
+  justify-content: flex-end;
   background: linear-gradient(
     0deg,
     rgba(231, 183, 39, 1) 0%,
@@ -164,40 +170,78 @@ button:hover {
   );
   border-radius: 50%;
 }
-.content .carousel {
-  width: 500px;
-  display: flex;
-  justify-content: flex-end;
-}
 .content .carousel img {
-  max-width: 150px;
+  max-width: 500px;
 }
 .swiper-slide img {
   position: absolute;
   bottom: 0;
-  max-height: 100%;
+  max-height: 90%;
 }
 .swiper-container-3d .swiper-slide-shadow-left,
 .swiper-container-3d .swiper-slide-shadow-right {
   background-image: none;
 }
+/*
+SOCIAL ICONS
+*/
+.social-icons {
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+}
+.social-icons li {
+  list-style: none;
+  padding-top: 20px;
+}
 
-@media (max-width: 991px) {
+.social-icons li a {
+  display: inline-block;
+  background-color: #dbdbdd;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+}
+.social-icons li a img {
+  max-width: 20px;
+}
+.social-icons li a:hover {
+  transform: translateX(-10px);
+}
+/*
+RESPONSIVE
+*/
+@media (max-width: 901px) {
   header {
-    padding: 40px;
+    top: 0;
+  }
+  header .brand {
+    display: none;
+  }
+  .main-container .left-rectangle {
+    display: none;
+  }
+  .main-container .top-rectangle {
+    position: absolute;
+    width: 10%;
+    height: 7%;
   }
   .social-icons {
-    right: 40px;
+    display: none;
   }
   .content {
-    flex-direction: column;
+    padding: 50px;
+    flex-direction: column-reverse;
   }
-  .content .text-area,
+  .content .text-area {
+    position: relative;
+    width: 100%;
+    margin: auto;
+  }
   .content .carousel {
-    max-width: 100%;
-  }
-  .swiper-slide {
-    height: 300px;
+    display: none;
   }
   header .navbar {
     display: none;
@@ -233,7 +277,7 @@ button:hover {
   }
   .toggle.active {
     position: fixed;
-    right: 40px;
+    right: 30px;
     background: url(images/close.png);
     background-size: 25px;
     background-repeat: no-repeat;

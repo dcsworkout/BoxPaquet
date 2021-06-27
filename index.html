@@ -5,10 +5,12 @@
     <title>BoxPaquet</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
 </head>
 <body>
-    <section>
-        <div class="rectangle"></div>
+    <div class="main-container">    
+        <div class="left-rectangle"></div>
+        <div class="top-rectangle"></div>
         <header>
             <a href="#"><img src="images/brand.png" class="brand"></a>
             <div class="toggle" onclick="toggleMenu()"></div>
@@ -19,8 +21,17 @@
                 <li><a href="#">Contáctanos</a></li>
             </ul>
         </header>
-        <div class="yellow-top"></div>
         <div class="content">
+            <div class="carousel">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="images/box1.png" ></div>
+                        <div class="swiper-slide"><img src="images/box2.png" ></div>
+                        <div class="swiper-slide"><img src="images/box4.png" ></div>
+                        <div class="swiper-slide"><img src="images/box5.png" ></div>
+                    </div>
+                </div>
+            </div>
             <div class="text-area">
                 <h2>HOLA!</h2>
                 <p>Somos Box Paquet, fabricantes de cajas.</p>
@@ -30,24 +41,13 @@
                     </button>
             </div>
         </div>
-        <div class="carousel">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="images/box1.png" ></div>
-                    <div class="swiper-slide"><img src="images/box2.png" ></div>
-                    <div class="swiper-slide"><img src="images/box4.png" ></div>
-                    <div class="swiper-slide"><img src="images/box5.png" ></div>
-                </div>
-            </div>
-        </div>
-
         <ul class="social-icons">
-            <li><a href="#"><img width="30px" src="images/instagram.png"></a></li>
-            <li><a href="#"><img width="30px" src="images/facebook.png"></a></li>
-            <li><a href="#"><img width="30px" src="images/twitter.png"></a></li>
-            <li><a href="#"><img width="30px" src="images/whatsapp.png"></a></li>
+            <li><a href="#"><img src="images/instagram.png"></a></li>
+            <li><a href="#"><img src="images/facebook.png"></a></li>
+            <li><a href="#"><img src="images/twitter.png"></a></li>
+            <li><a href="#"><img src="images/whatsapp.png"></a></li>
         </ul>
-    </section>
+    </div>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".swiper-container", {
@@ -75,4 +75,5 @@
 
     </script>
 </body>
+
 </html>
