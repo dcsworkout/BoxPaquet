@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 html {
   box-sizing: border-box;
 }
@@ -6,7 +7,7 @@ body {
   height: 100vh;
   background: #dbdbdd;
   font-size: 1rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 /*
 LAYOUT
@@ -62,7 +63,7 @@ header .navbar {
 header .navbar li {
   padding: 0;
   list-style: none;
-  margin-right: 80px;
+  margin-right: 95px;
   display: table-cell;
   position: relative;
 }
@@ -70,7 +71,6 @@ header .navbar li a {
   display: inline-block;
   color: #6d6d6f;
   text-decoration: none;
-  text-transform: uppercase;
   position: relative;
   padding-bottom: 10px;
 }
@@ -98,8 +98,9 @@ MEDIA
 */
 .content {
   position: relative;
-  margin: auto;
+  margin-top: 9%;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -113,15 +114,19 @@ MEDIA
 .content .text-area h2 {
   color: #424240;
   font-size: 5rem;
-  line-height: 1.4em;
+  margin: 0;
 }
 .content .text-area h4 {
   color: #424240;
   font-size: 2rem;
-  line-height: 1.4em;
+  max-width: 400px;
+  margin: 0;
+  padding-bottom: 20px;
 }
 .content .text-area p {
   color: #424240;
+  margin: 0;
+  padding-bottom: 12px;
 }
 .button {
   background-color: #eabd30;
@@ -241,7 +246,18 @@ RESPONSIVE
     margin: auto;
   }
   .content .carousel {
-    display: none;
+    width: 100%;
+    margin: auto;
+    padding-top: 50%;
+    max-width: 250px;
+    background: none;
+  }
+  .content .carousel img {
+    max-width: 500px;
+  }
+  .swiper-slide img {
+    position: relative;
+    max-height: 75%;
   }
   header .navbar {
     display: none;
